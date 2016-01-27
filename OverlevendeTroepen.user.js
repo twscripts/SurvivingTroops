@@ -2,7 +2,7 @@
 // @name        Overlevende Troepen
 // @namespace   kc-productions.org
 // @include     https://*.tribalwars.*/game.php?*&screen=report*
-// @version     1.3
+// @version     1.4
 // @grant       none
 // ==/UserScript==
 
@@ -44,19 +44,12 @@ function survivors(table, deff){
 }
 
 function calcODA(array, table){
+  var oda = [4,5,1,5,1,5,6,23,4,12,40,200];
   var result = 0;
-  result+=4*array[0];
-  result+=5*array[1];
-  result+=1*array[2];
-  result+=5*array[3];
-  result+=1*array[4];
-  result+=5*array[5];
-  result+=6*array[6];
-  result+=23*array[7];
-  result+=4*array[8];
-  result+=12*array[9];
-  result+=40*array[10];
-  result+=200*array[11];
+
+  for(var i=0; i<oda.length;i++){
+    result += oda[i] * array[i];
+  }
 
   var row = table.insertRow(table.rows.length);
   var cell1 = row.insertCell(0);
@@ -65,19 +58,12 @@ function calcODA(array, table){
 
 }
 function calcODD(array, table){
+  var odd = [1,2,4,2,2,13,12,15,8,10,20,200];
   var result = 0;
-  result+=1*array[0];
-  result+=2*array[1];
-  result+=4*array[2];
-  result+=2*array[3];
-  result+=2*array[4];
-  result+=13*array[5];
-  result+=12*array[6];
-  result+=15*array[7];
-  result+=8*array[8];
-  result+=10*array[9];
-  result+=20*array[10];
-  result+=200*array[11];
+
+  for(var i=0; i<odd.length;i++){
+    result += odd[i] * array[i];
+  }
 
   var row = table.insertRow(table.rows.length);
   var cell1 = row.insertCell(0);

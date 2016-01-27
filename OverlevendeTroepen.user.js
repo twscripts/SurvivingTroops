@@ -1,6 +1,7 @@
 // ==UserScript==
 // @name        Overlevende Troepen
 // @namespace   kc-productions.org
+// @author      kefke44
 // @include     https://*.tribalwars.*/game.php?*&screen=report*
 // @version     1.4
 // @grant       none

@@ -2,15 +2,22 @@
 // @name        Overlevende Troepen
 // @namespace   kc-productions.org
 // @include     https://*.tribalwars.*/game.php?*&screen=report*
-// @version     1.0
+// @version     1.2
 // @grant       none
 // ==/UserScript==
 
-function survivors(table){
+function survivors(table, deff){
   var row = table.insertRow(table.rows.length);
   // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
-  for(var c = 0; c<12; c++){
-    row.insertCell(c)
+  if(deff==1){
+    for(var c = 0; c<13; c++){
+      row.insertCell(c)
+    }
+  }
+  else{
+    for(var c = 0; c<12; c++){
+      row.insertCell(c)
+    }
   }
 
 
@@ -46,6 +53,6 @@ function survivors(table){
 }
 
 var table = document.getElementById("attack_info_att_units");
-survivors(table);
+survivors(table, 0);
 table = document.getElementById("attack_info_def_units");
-survivors(table);
+survivors(table,1);

@@ -5,7 +5,7 @@
 // @description Adds survivors to reports and shows gained ODA and ODD
 // @icon        http://m.img.brothersoft.com/android/405/1352517939_icon.png
 // @include     https://*.tribalwars.*/game.php?*&screen=report*
-// @version     1.4
+// @version     1.5
 // @grant       none
 // ==/UserScript==
 
@@ -13,21 +13,20 @@ function survivors(table, deff){
   var row = table.insertRow(table.rows.length);
 
   if(deff==1){
-    for(var c = 0; c<13; c++){
+    for(var c = 0; c<deffunits; c++){
       row.insertCell(c);
-      var doden = new Array(13);
+      var doden = new Array(deffunits);
     }
   }
   else{
-    for(var c = 0; c<12; c++){
+    for(var c = 0; c<offunits; c++){
       row.insertCell(c);
-      var doden = new Array(12);
+      var doden = new Array(offunits);
     }
   }
 
   var aantal = table.rows[table.rows.length-3];
   var gestorven = table.rows[table.rows.length-2];
-
   for (var j = 0, col; col = row.cells[j]; j++) {
     doden[j]=gestorven.cells[j+1].innerHTML;
     var survived = aantal.cells[j+1].innerHTML-gestorven.cells[j+1].innerHTML;
@@ -40,6 +39,7 @@ function survivors(table, deff){
        }
        col.style = "text-align:center";
      }
+
    var temp = row.insertCell(0);
    temp.innerHTML = "Overlevend:";
    temp.style.width = "20%";
@@ -47,7 +47,6 @@ function survivors(table, deff){
 }
 
 function calcODA(array, table){
-  var oda = [4,5,1,5,1,5,6,23,4,12,40,200];
   var result = 0;
 
   for(var i=0; i<oda.length;i++){
@@ -61,7 +60,6 @@ function calcODA(array, table){
 
 }
 function calcODD(array, table){
-  var odd = [1,2,4,2,2,13,12,15,8,10,20,200];
   var result = 0;
 
   for(var i=0; i<odd.length;i++){
@@ -73,6 +71,25 @@ function calcODD(array, table){
   cell1.innerHTML = "ODD: " + result;
   cell1.style.fontWeight = 'bold';
 }
+
+function setWorldVariables(world){
+  if(world=='nl47'){
+    odd = [1,2,4,2,13,15,8,10,200];
+    oda = [4,5,1,1,5,23,4,12,200];
+    deffunits = 10;
+    offunits = 9;
+  }
+}
+
+var odd = [1,2,4,2,2,13,12,15,8,10,20,200];
+var oda = [4,5,1,5,1,5,6,23,4,12,40,200];
+var deffunits = 13;
+var offunits = 12;
+var url = window.location.href;
+var url_safe = url.replace('https://','');
+var url_array = url_safe.split(".");
+var world = url_array[0];
+setWorldVariables(world);
 
 var attack = document.getElementById("attack_info_att_units");
 var deathByDefense = survivors(attack, 0);

@@ -37,3 +37,65 @@ greater_than(s(X),s(Y)) :- greater_than(X,Y).
 maximum(X,X,X).
 maximum(X,Y,X) :- greater_than(X,Y).
 maximum(X,Y,Y) :- greater_than(Y,X).
+
+depth(nil, 0).
+depth(node(L,_,R),D) :- 
+    depth(L,A),
+    depth(R,B),
+    D is max(A,B) + 1.
+    
+
+eval(tru, tru).
+
+eval(fal, fal).
+
+eval(and(B1,B2),tru) :- 
+    eval(B1,tru),
+    eval(B2,tru).
+    
+eval(and(B1,_),fal) :-
+    eval(B1,fal).
+    
+eval(and(_,B2),fal) :-
+    eval(B2,fal).
+    
+eval(or(B1,_),tru) :-
+    eval(B1,tru).
+    
+eval(or(_,B2),tru) :-
+    eval(B2,tru).
+    
+eval(or(B1,B2),fal) :-
+    eval(B1,fal),
+    eval(B2,fal).
+    
+eval(not(B),tru) :-
+    eval(B,fal).
+    
+eval(not(B),fal) :-
+    eval(B,tru).
+    
+    
+eval(number(X),X).
+
+eval(plus(B1,B2),X) :-
+    eval(B1,Y),
+    eval(B2,Z),
+    X is Y+Z.
+    
+eval(min(B1,B2),X) :-
+    eval(B1,Y),
+    eval(B2,Z),
+    X is Y-Z.
+    
+eval(neg(B),X) :-
+    eval(B,Y),
+    X is -Y.
+    
+eval(=(B1,B2),tru) :-
+    eval(B1,Y),
+    eval(B2,Y).
+
+eval(=(B1,B2),fal) :-
+    eval(B1,Y),
+    not(eval(B2,Y)).

@@ -15,3 +15,14 @@ sibling(X,Y) :-
     mother(M,X),
     mother(M,Y),
     X \== Y.
+
+/* Part 2 */
+a.
+b.
+c.
+
+edge(a,b).
+edge(c,b).
+
+isConnected(A,B) :-
+    edge(A,B) ; edge(B,A).

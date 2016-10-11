@@ -88,6 +88,7 @@ function calcODD(array, table){
   cell2.style.fontWeight = 'bold';
 }
 
+//Set variables for currently detected world
 function setWorldVariables(world){
   if(world=='nl47'){
     odd = [1,2,4,2,13,15,8,10,200];

@@ -99,3 +99,27 @@ eval(=(B1,B2),tru) :-
 eval(=(B1,B2),fal) :-
     eval(B1,Y),
     not(eval(B2,Y)).
+
+minmaxtree(T,R) :- 
+    mintree(T,R).
+
+mintree(leaf(X),X).
+
+mintree(node(C1-LTree, C2-_),R) :-
+    not(C1 > C2),
+    maxtree(LTree,R).
+    
+mintree(node(C1-_, C2-RTree),R) :-
+    C1 > C2,
+    maxtree(RTree,R).
+
+maxtree(leaf(X),X).
+
+maxtree(node(C1-LTree, C2-_),R) :-
+    not(C1 < C2),
+    mintree(LTree,R).
+    
+maxtree(node(C1-_, C2-RTree),R) :-
+    C1 < C2,
+    mintree(RTree,R).
+    

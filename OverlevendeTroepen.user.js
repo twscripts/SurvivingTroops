@@ -5,10 +5,11 @@
 // @description Adds survivors to reports and shows gained ODA and ODD
 // @icon        http://m.img.brothersoft.com/android/405/1352517939_icon.png
 // @include     https://*.tribalwars.*/game.php?*&screen=report*
-// @version     1.6
+// @version     1.8
 // @grant       none
 // ==/UserScript==
 
+// Start process
 function survivors(table, deff){
   var row = table.insertRow(table.rows.length);
 
@@ -78,7 +79,7 @@ function calcODD(array, table){
   var row2 = table.insertRow(table.rows.length);
   var cell1 = row.insertCell(0);
   var cell2 = row2.insertCell(0);
-  cell1.innerHTML = "ODD: " + result;
+  cell1.innerHTML = "ODD: " + result + " aiaiai miserie miserie miserie";
   cell1.style.fontWeight = 'bold';
   cell2.innerHTML = "VVDD: " + killed;
   cell2.style.fontWeight = 'bold';

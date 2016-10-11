@@ -9,6 +9,7 @@
 // @grant       none
 // ==/UserScript==
 
+
 function survivors(table, deff){
   var row = table.insertRow(table.rows.length);
 
@@ -46,6 +47,7 @@ function survivors(table, deff){
    return doden;
 }
 
+//Function that calculates ODA
 function calcODA(array, table){
   var result = 0;
   var killed = 0;
@@ -65,6 +67,8 @@ function calcODA(array, table){
   cell2.style.fontWeight = 'bold';
 
 }
+
+//Functions that calculate ODD
 function calcODD(array, table){
   var result = 0;
   var killed = 0;

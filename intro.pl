@@ -26,3 +26,6 @@ edge(c,b).
 
 isConnected(A,B) :-
     edge(A,B) ; edge(B,A).
+
+edge(a,c).
+edge(c,d).

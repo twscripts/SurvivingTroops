@@ -1,5 +1,5 @@
 father(anton,bart).
-father(anton,daan).
+father(anton,maarten).
 father(anton,elisa).
 father(fabian,anton).
 

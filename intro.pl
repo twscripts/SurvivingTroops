@@ -27,8 +27,8 @@ edge(c,b).
 isConnected(A,B) :-
     edge(A,B) ; edge(B,A).
 
-father(bart,anton).
-father(fabian, bart).
-
 edge(a,c).
 edge(c,d).
+
+mother(celine, gerda).
+mother(gerde, anton).

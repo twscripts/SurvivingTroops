@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name        Overlevende Troepen
+// @name        Overlevende Troepen Script
 // @author      kefke44
 // @namespace   https://github.com/coorenskevin/Tribalwars-Overlevende-troepen-in-berichten.
 // @description Adds survivors to reports and shows gained ODA and ODD

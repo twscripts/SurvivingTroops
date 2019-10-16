@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name        Overlevende Troepen
 // @author      kefke44
-// @namespace   https://github.com/coorenskevin/Tribalwars-Overlevende-troepen-in-berichten.
+// @namespace   https://github.com/twscripts/Tribalwars-Overlevende-troepen-in-berichten.
 // @description Adds survivors to reports and shows gained ODA and ODD
 // @icon        http://m.img.brothersoft.com/android/405/1352517939_icon.png
 // @include     https://*.tribalwars.*/game.php?*&screen=report*
-// @version     1.6
+// @version     1.7
 // @grant       none
 // ==/UserScript==
 
@@ -62,7 +62,7 @@ function calcODA(array, table){
   var cell1 = row.insertCell(0);
   cell1.innerHTML = "ODA: " + result;
   cell1.style.fontWeight = 'bold';
-
+  // Attacker of the day stats insert
   cell2.innerHTML = "AVDD: " + killed;
   cell2.style.fontWeight = 'bold';
 
@@ -77,7 +77,7 @@ function calcODD(array, table){
     result += odd[i] * array[i];
     killed+= array[i]*1;
   }
-
+  // Add rows to display ODA & ODD 
   var row = table.insertRow(table.rows.length);
   var row2 = table.insertRow(table.rows.length);
   var cell1 = row.insertCell(0);
@@ -98,6 +98,7 @@ function setWorldVariables(world){
   }
 }
 
+// ODD & ODA values
 var odd = [1,2,4,2,2,13,12,15,8,10,20,200];
 var oda = [4,5,1,5,1,5,6,23,4,12,40,200];
 var deffunits = 13;
@@ -106,6 +107,7 @@ var url = window.location.href;
 var url_safe = url.replace('https://','');
 var url_array = url_safe.split(".");
 var world = url_array[0];
+//Check if player is playing on a world with only a certain type of units (bow)
 setWorldVariables(world);
 
 var attack = document.getElementById("attack_info_att_units");

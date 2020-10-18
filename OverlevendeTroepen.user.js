@@ -5,7 +5,7 @@
 // @description Adds survivors to reports and shows gained ODA and ODD
 // @icon        http://m.img.brothersoft.com/android/405/1352517939_icon.png
 // @include     https://*.tribalwars.*/game.php?*&screen=report*
-// @version     1.7
+// @version     1.8
 // @grant       none
 // ==/UserScript==
 

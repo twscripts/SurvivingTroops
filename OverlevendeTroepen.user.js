@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name        Overlevende Troepen
-// @author      kefke44
+// @author      Coorens Kevin
 // @namespace   https://github.com/twscripts/Tribalwars-Overlevende-troepen-in-berichten.
 // @description Adds survivors to reports and shows gained ODA and ODD
 // @icon        http://m.img.brothersoft.com/android/405/1352517939_icon.png
 // @include     https://*.tribalwars.*/game.php?*&screen=report*
-// @version     1.8
+// @version     1.9
 // @grant       none
 // ==/UserScript==
 

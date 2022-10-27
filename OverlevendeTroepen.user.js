@@ -5,7 +5,7 @@
 // @description Adds survivors to reports and shows gained ODA and ODD
 // @icon        http://m.img.brothersoft.com/android/405/1352517939_icon.png
 // @include     https://*.tribalwars.*/game.php?*&screen=report*
-// @version     1.9
+// @version     1.10
 // @grant       none
 // ==/UserScript==
 
@@ -65,7 +65,6 @@ function calcODA(array, table){
   // Attacker of the day stats insert
   cell2.innerHTML = "AVDD: " + killed;
   cell2.style.fontWeight = 'bold';
-
 }
 
 //Functions that calculate ODD

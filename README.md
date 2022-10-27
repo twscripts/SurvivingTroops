@@ -1,5 +1,5 @@
 # Tribalwars-Overlevende-troepen-in-berichten.
-Tribalwars script dat overlevende troepen direct weergeeft in je berichten.
+Tribalwars script dat overlevende troepen direct berekent en weergeeft in je berichten.
 
 Dit script werkt op alle werelden die alle troepen-eenheden gebruiken. Aanpassingen zijn nodig om de aanwezige troepen afhankelijk van de huidige wereld te detecteren, dit is een toekomstige update. 
 
